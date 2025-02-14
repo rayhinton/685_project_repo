@@ -1,0 +1,49 @@
+20230326 8702 SVM Fisher during CV
+
+(ent took about 17 min)
+(int went to 118 min)
+
+236 min total
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+SVM ent    0.967121  0.916636     0.922258     0.911100
+    int    0.995923  0.971661     0.971480     0.971624
+    comb   0.999562  0.990610     0.988405     0.992717
+
+-----
+
+# proj_path = '/content/drive/MyDrive/STAT685/685_project_repo'
+proj_path = 'G:/My Drive/STAT685/685_project_repo'
+# proj_path = '/Users/rayhinton/OneDrive/OneDrive - AMNH/misc-other/school/stat685/project/685_project_repo'
+
+# choose data set
+d_choice = '8702'
+# d_choice = '4302'
+
+# number of levels of wavelet decomposition
+l = 5
+wavelet = 'db3'
+
+# number of features to choose from intensity and entropy columns
+nfeat_int = 10
+nfeat_ent = 5
+
+# Choose Intensity features by Fisher criterion once or during CV
+do_int_fisher_once = False
+
+# Choose RFE or Fisher criterion for Entropy feature selection
+do_rfe_for_ent = False
+
+# whether or not to do hyperparamter tuning
+do_hyper_tune = True
+
+window_size = 1024
+window_step = 500
+
+cv_n_repeats = 1
+run_prefix = '20230326_100-fisherCV'
+
+do_undersamp = True
+NUM_TRIALS = 100
+refit_score = 'accuracy'

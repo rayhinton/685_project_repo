@@ -1,0 +1,55 @@
+20230325_100_LR
+120 minutes
+results:
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+LR  ent    0.969487  0.919231     0.914007     0.924308
+    int    0.997008  0.974084     0.976452     0.971538
+    comb   0.999627  0.991172     0.989398     0.992835
+
+-----
+
+import os, sys
+import glob
+import pandas as pd
+import numpy as np
+import pywt
+import matplotlib.pyplot as plt
+from sklearn.utils import check_X_y, safe_mask, as_float_array
+import pickle
+
+# proj_path = '/content/drive/MyDrive/STAT685/685_project_repo'
+proj_path = 'G:/My Drive/STAT685/685_project_repo'
+# proj_path = '/Users/rayhinton/OneDrive/OneDrive - AMNH/misc-other/school/stat685/project/685_project_repo'
+
+# choose data set
+d_choice = '8702'
+# d_choice = '4302'
+
+# number of levels of wavelet decomposition
+l = 5
+wavelet = 'db3'
+
+# number of features to choose from intensity and entropy columns
+nfeat_int = 10
+nfeat_ent = 5
+
+# Choose Intensity features by Fisher criterion once or during CV
+do_int_fisher_once = False
+
+# Choose RFE or Fisher criterion for Entropy feature selection
+do_rfe_for_ent = False
+
+# whether or not to do hyperparamter tuning
+do_hyper_tune = True
+
+window_size = 1024
+window_step = 500
+
+cv_n_repeats = 1
+run_prefix = '20230325_100'
+
+do_undersamp = True
+NUM_TRIALS = 100
+refit_score = 'accuracy'

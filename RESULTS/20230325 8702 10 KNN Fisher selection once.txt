@@ -1,0 +1,102 @@
+20230325 8702 10 KNN **Fisher selection during CV**
+
+took 7:43
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+KNN ent    0.951265  0.912650     0.921971     0.903262
+    int    0.985985  0.974763     0.971290     0.978029
+    comb   0.993907  0.988989     0.985699     0.992222
+
+-----
+
+# proj_path = '/content/drive/MyDrive/STAT685/685_project_repo'
+proj_path = 'G:/My Drive/STAT685/685_project_repo'
+# proj_path = '/Users/rayhinton/OneDrive/OneDrive - AMNH/misc-other/school/stat685/project/685_project_repo'
+
+# choose data set
+d_choice = '8702'
+# d_choice = '4302'
+
+# number of levels of wavelet decomposition
+l = 5
+wavelet = 'db3'
+
+# number of features to choose from intensity and entropy columns
+nfeat_int = 10
+nfeat_ent = 5
+
+# Choose Intensity features by Fisher criterion once or during CV
+do_int_fisher_once = False
+
+# Choose RFE or Fisher criterion for Entropy feature selection
+do_rfe_for_ent = False
+
+# whether or not to do hyperparamter tuning
+do_hyper_tune = True
+
+window_size = 1024
+window_step = 500
+
+cv_n_repeats = 1
+run_prefix = '20230325_10-fisherCV'
+
+do_undersamp = True
+NUM_TRIALS = 10
+refit_score = 'accuracy'
+
+-----
+
+20230325 8702 10 KNN **Fisher selection only once**
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+KNN ent    0.951047  0.911020     0.920717     0.901147
+    int    0.987884  0.968124     0.962294     0.973692
+    comb   0.996558  0.994481     0.993333     0.995556
+
+-----
+
+import os, sys
+import glob
+import pandas as pd
+import numpy as np
+import pywt
+import matplotlib.pyplot as plt
+from sklearn.utils import check_X_y, safe_mask, as_float_array
+import pickle
+
+# proj_path = '/content/drive/MyDrive/STAT685/685_project_repo'
+proj_path = 'G:/My Drive/STAT685/685_project_repo'
+# proj_path = '/Users/rayhinton/OneDrive/OneDrive - AMNH/misc-other/school/stat685/project/685_project_repo'
+
+# choose data set
+d_choice = '8702'
+# d_choice = '4302'
+
+# number of levels of wavelet decomposition
+l = 5
+wavelet = 'db3'
+
+# number of features to choose from intensity and entropy columns
+nfeat_int = 10
+nfeat_ent = 5
+
+# Choose Intensity features by Fisher criterion once or during CV
+do_int_fisher_once = True
+
+# Choose RFE or Fisher criterion for Entropy feature selection
+do_rfe_for_ent = False
+
+# whether or not to do hyperparamter tuning
+do_hyper_tune = True
+
+window_size = 1024
+window_step = 500
+
+cv_n_repeats = 1
+run_prefix = '20230325_100'
+
+do_undersamp = True
+NUM_TRIALS = 10
+refit_score = 'accuracy'

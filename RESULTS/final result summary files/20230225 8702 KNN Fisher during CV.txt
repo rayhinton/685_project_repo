@@ -1,0 +1,48 @@
+20230225 8702 KNN Fisher during CV
+
+(took 7:43 for 10 repetitions)
+
+70 min.
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+KNN ent    0.956882  0.914321     0.924724     0.903935
+    int    0.987331  0.973571     0.973430     0.973534
+    comb   0.995245  0.990665     0.990538     0.990688
+
+-----
+
+# proj_path = '/content/drive/MyDrive/STAT685/685_project_repo'
+proj_path = 'G:/My Drive/STAT685/685_project_repo'
+# proj_path = '/Users/rayhinton/OneDrive/OneDrive - AMNH/misc-other/school/stat685/project/685_project_repo'
+
+# choose data set
+d_choice = '8702'
+# d_choice = '4302'
+
+# number of levels of wavelet decomposition
+l = 5
+wavelet = 'db3'
+
+# number of features to choose from intensity and entropy columns
+nfeat_int = 10
+nfeat_ent = 5
+
+# Choose Intensity features by Fisher criterion once or during CV
+do_int_fisher_once = False
+
+# Choose RFE or Fisher criterion for Entropy feature selection
+do_rfe_for_ent = False
+
+# whether or not to do hyperparamter tuning
+do_hyper_tune = True
+
+window_size = 1024
+window_step = 500
+
+cv_n_repeats = 1
+run_prefix = '20230325_100-fisherCV'
+
+do_undersamp = True
+NUM_TRIALS = 100
+refit_score = 'accuracy'

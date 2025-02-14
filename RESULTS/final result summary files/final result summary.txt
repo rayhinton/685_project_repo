@@ -1,0 +1,43 @@
+8702
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+LR  ent    0.969487  0.919231     0.914007     0.924308
+    int    0.997008  0.974084     0.976452     0.971538
+    comb   0.999627  0.991172     0.989398     0.992835
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+SVM ent    0.967121  0.916636     0.922258     0.911100
+    int    0.995923  0.971661     0.971480     0.971624
+    comb   0.999562  0.990610     0.988405     0.992717
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+KNN ent    0.956882  0.914321     0.924724     0.903935
+    int    0.987331  0.973571     0.973430     0.973534
+    comb   0.995245  0.990665     0.990538     0.990688
+
+-----
+
+4302
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+LR  ent    0.854066  0.765314     0.828119     0.700021
+    int    0.979843  0.960360     0.975936     0.944557
+    comb   0.988198  0.956445     0.972662     0.940000
+
+20230329 4302 SVM Fisher during CV
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+SVM ent    0.846935  0.769182     0.830615     0.705374
+    int    0.979903  0.960384     0.971040     0.949507
+    comb   0.986672  0.953550     0.966361     0.940520
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+KNN ent    0.840206  0.768063     0.874926     0.658455
+    int    0.970943  0.965117     0.971512     0.958720
+    comb   0.973851  0.960459     0.968800     0.952094

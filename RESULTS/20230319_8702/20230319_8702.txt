@@ -1,0 +1,55 @@
+done in 21:48
+
+includes hyperparameter tuning
+
+-----
+
+# proj_path = '/content/drive/MyDrive/STAT685/project'
+proj_path = 'G:/My Drive/STAT685/685_project_repo'
+# proj_path = '/Users/rayhinton/OneDrive/OneDrive - AMNH/misc-other/school/stat685/project/685_project_repo'
+
+# choose data set
+d_choice = '8702'
+# d_choice = '4302'
+
+# number of levels of wavelet decomposition
+l = 5
+wavelet = 'db3'
+
+# number of features to choose from intensity and entropy columns
+nfeat_int = 10
+nfeat_ent = 5
+
+# Choose Intensity features by Fisher criterion once or during CV
+do_int_fisher_once = False
+
+# Choose RFE or Fisher criterion for Entropy feature selection
+do_rfe_for_ent = False
+
+# whether or not to do hyperparamter tuning
+do_hyper_tune = True
+
+window_size = 1024
+window_step = 500
+
+cv_n_repeats = 1
+run_prefix = '20230319'
+
+do_undersamp = True
+NUM_TRIALS = 5
+refit_score = 'accuracy'
+
+-----
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+LR  ent    0.965663  0.917632     0.911756     0.923082
+    int    0.998194  0.972550     0.973405     0.971470
+    comb   0.999852  0.993333     0.988889     0.997778
+SVM ent    0.965214  0.916521     0.913978     0.918853
+    int    0.995417  0.972550     0.975556     0.969247
+    comb   0.999336  0.988962     0.986738     0.991111
+KNN ent    0.951047  0.911020     0.920717     0.901147
+    int    0.982616  0.970328     0.966667     0.973620
+    comb   0.996667  0.990036     0.986667     0.993333
+

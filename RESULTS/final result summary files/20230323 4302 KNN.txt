@@ -1,0 +1,48 @@
+KNN: took about 75 minutes
+
+-----
+
+results
+
+            roc_auc  accuracy  sensitivity  specificity
+alg feats                                              
+KNN ent    0.840206  0.768063     0.874926     0.658455
+    int    0.970943  0.965117     0.971512     0.958720
+    comb   0.973851  0.960459     0.968800     0.952094
+
+-----
+
+# proj_path = '/content/drive/MyDrive/STAT685/685_project_repo'
+proj_path = 'G:/My Drive/STAT685/685_project_repo'
+# proj_path = '/Users/rayhinton/OneDrive/OneDrive - AMNH/misc-other/school/stat685/project/685_project_repo'
+
+# choose data set
+# d_choice = '8702'
+d_choice = '4302'
+
+# number of levels of wavelet decomposition
+l = 5
+wavelet = 'db3'
+
+# number of features to choose from intensity and entropy columns
+nfeat_int = 10
+nfeat_ent = 5
+
+# Choose Intensity features by Fisher criterion once or during CV
+do_int_fisher_once = False
+
+# Choose RFE or Fisher criterion for Entropy feature selection
+do_rfe_for_ent = False
+
+# whether or not to do hyperparamter tuning
+do_hyper_tune = True
+
+window_size = 1024
+window_step = 500
+
+cv_n_repeats = 1
+run_prefix = '20230323'
+
+do_undersamp = True
+NUM_TRIALS = 100
+refit_score = 'accuracy'
